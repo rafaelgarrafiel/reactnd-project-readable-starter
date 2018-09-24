@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import { Grid, GridCell } from 'rmwc/Grid';
-import Post from './Post'
 import { Typography } from 'rmwc/Typography';
 import { Elevation } from 'rmwc/Elevation';
 import { connect } from 'react-redux'
+import { getPosts } from '../actions/Post'
+import Post from './Post'
 
 class Feed extends Component {
+
+    componentDidMount() {
+        this.props.getPosts()
+    }
+
     render(){
+        const { posts, all } = this.props
         return(
             <Grid>
                 <GridCell span="12">
@@ -22,7 +29,15 @@ class Feed extends Component {
                     </Elevation>
                 </GridCell>
                 <GridCell span="12">
-                    <Post/>
+                    {all===false?
+                        posts.filter(post=>post.category===this.props.title)
+                        .map((post, key)=>(
+                        <Post key={key} post={post} list={true}/>
+                    ))
+                    :posts.map((post, key)=>(
+                        <Post key={key} post={post} list={true}/>
+                    ))
+                    }
                 </GridCell>
             </Grid>
             )
@@ -30,7 +45,11 @@ class Feed extends Component {
 }
 
 const mapStateToProps = (state, props) => ({
-
+    posts: state.Post.posts
 })
 
-export default connect(mapStateToProps)(Feed)
+const mapDispatchToProps = dispatch =>({
+    getPosts: (data) => dispatch(getPosts())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Feed)

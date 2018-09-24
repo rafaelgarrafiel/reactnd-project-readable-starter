@@ -1,21 +1,28 @@
 import * as API from '../utils/api';
 
-export const RECEIVE_CATEGORIES = "RECEIVE_CATEGORIES";
-export const ADD_CATEGORY = "ADD_CATEGORY";
+export const FETCH_CATEGORIES = "FETCH_CATEGORIES";
+export const FETCH_CATEGORIES_POSTS = "FETCH_CATEGORIES_POSTS";
 
-export const receiveCategories = categories => ({
-  type: RECEIVE_CATEGORIES,
+//GET /categories
+export const fetchCategories = categories => ({
+  type: FETCH_CATEGORIES,
   categories
 });
 
-export const addCategory = ({ name, path}) => ({
-    type: ADD_CATEGORY,
-    name,
-    path
+//GET /:category/posts
+export const fetchCategoriesPost = posts => ({
+  type: FETCH_CATEGORIES_POSTS,
+  posts
 });
 
-export const fetchCategories = () => dispatch => (
+export const getCategories = () => dispatch => (
     API
-      .getAll()
-      .then(categories => dispatch(receiveCategories(categories)))
+      .getCategories()
+      .then(categories => dispatch(fetchCategories(categories)))
+);
+
+export const getCategoriesPost = (category) => dispatch => (
+    API
+      .getCategoriesPost(category)
+      .then(posts => dispatch(fetchCategoriesPost(posts)))
 );

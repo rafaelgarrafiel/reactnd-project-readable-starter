@@ -8,6 +8,8 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
+// import { routerMiddleware } from 'react-router-redux'
+// import { history } from './history'
 
 
 WebFont.load({
@@ -23,12 +25,20 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 //     applyMiddleware(thunk)
 //     )
 
+// const middlewareHistory = routerMiddleware(history)
 const store = createStore(
     rootReducer,
     composeEnhancers(
         applyMiddleware(thunk)
       )
     )
+
+// const store = createStore(
+//   rootReducer,
+//   composeEnhancers(
+//     applyMiddleware(middlewareHistory, thunk)
+//   )
+// )
 // const store = () => createStore(rootReducer, applyMiddleware(thunk));
 
 // export default store;

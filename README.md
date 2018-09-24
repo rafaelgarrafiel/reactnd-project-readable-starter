@@ -1,22 +1,46 @@
-# Readable API Server
+Esse projeto implementa o MyReads como requisito para aprovação do curso Fundamentos de React da [Udacity](https://www.udacity.com/), parte integrante do [Programa Nanodegree React](https://udacity.com/course/nd019)
 
-This is the starter project for the final assessment project for Udacity's Redux course where you will build a content and comment web app. Users will be able to post content to predefined categories, comment on their posts and other users' posts, and vote on posts and comments. Users will also be able to edit and delete posts and comments.
+### Pré-requisitos
 
-This repository includes the code for the backend API Server that you'll use to develop and interact with the front-end portion of the project.
+* **Npm** é um gerenciado de pacotes distribuido com o Node.js. [Download Node.js](https://nodejs.org/en/download/)
 
-## Start Developing
+ou
 
-To get started developing right away:
+* **Yarn** é um gerenciador de pacotes construido pela equipe do Facebook com o propósito de ser mais rápido que o NPM.  [Download Yarn](https://yarnpkg.com/en/docs/install)
 
-* Install and start the API server
-    - `cd api-server`
-    - `npm install`
-    - `node server`
-* In another terminal window, use Create React App to scaffold out the front-end
-    - `create-react-app frontend`
-    - `cd frontend`
-    - `npm start`
+### Instalando
 
-## API Server
+Para baixar o projeto siga as instruções:
 
-Information about the API server and how to use it can be found in its [README file](api-server/README.md).
+```
+git clone https://github.com/rafaelgarrafiel/reactnd-project-readable-starter.git
+cd reactnd-project-readable-starter
+```
+
+Após o download do código fonte, basta instalar as dependencias:
+
+```
+yarn install
+yarn start
+```
+
+ou 
+
+```
+npm install
+npm run start
+```
+
+## Versão
+
+v1.0 
+* Implementação do projeto 
+
+## Autor
+
+Rafael Garrafiel
+* [https://github.com/rafaelgarrafiel](https://github.com/rafaelgarrafiel)
+
+## License
+
+Este projeto está licenciado sobre a licença MIT - Veja mais sobre a [Licença](https://opensource.org/licenses/MIT)

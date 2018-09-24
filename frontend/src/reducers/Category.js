@@ -1,6 +1,6 @@
 import {
-    RECEIVE_CATEGORIES,
-    ADD_CATEGORY
+    FETCH_CATEGORIES,
+    FETCH_CATEGORIES_POSTS
 } from '../actions/Category'
 
 const initialState = {
@@ -9,24 +9,15 @@ const initialState = {
 
 export const Category = (state = initialState, action) => {
 
-    const { categories, name, path } = action
+    const { categories } = action
 
     switch ( action.type ) {
 
-        case RECEIVE_CATEGORIES :
-            return { 
-                ...state,
-                categories: categories
-            }
+        case FETCH_CATEGORIES :
+            return categories
 
-        case ADD_CATEGORY :
-            return { 
-                ...state,
-                categories: [...state.categories, {
-                    name: name,
-                    path: path
-                  }]
-            }
+        case FETCH_CATEGORIES_POSTS :
+            return categories
 
         default :
             return state
