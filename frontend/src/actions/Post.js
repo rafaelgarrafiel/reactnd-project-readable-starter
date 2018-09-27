@@ -1,6 +1,4 @@
 import * as API from '../utils/api';
-// import * as TOOLS from '../utils/tools';
-
 export const FETCH_POSTS = 'FETCH_POSTS'
 export const ADD_POST = 'ADD_POST'
 export const FETCH_POST_ID = 'FETCH_POST_ID'
@@ -96,7 +94,6 @@ export const deletePost = (id) => dispatch => (
 );
 
 export const sortAllPost = (value) => dispatch => {
-    // console.log(posts)
     API
       .getPosts()
       .then((posts) => {
@@ -107,5 +104,4 @@ export const sortAllPost = (value) => dispatch => {
           dispatch(fetchPosts(posts))
         }
       })
-    // return dispatch(sortPosts(posts.sort((a,b) => a.voteScore - b.voteScore)))
 };

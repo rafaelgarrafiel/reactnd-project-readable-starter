@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, GridCell } from 'rmwc/Grid';
-// import { Typography } from 'rmwc/Typography';
-// import { Elevation } from 'rmwc/Elevation';
 import { connect } from 'react-redux'
 import { getPostComments } from '../actions/Comment'
-// import Post from './Post'
 import Comment from './Comment'
 
 class FeedComment extends Component {
@@ -15,7 +12,6 @@ class FeedComment extends Component {
 
     render(){
         const { comments } = this.props
-        // console.log(this.props)
         return(
             <Grid>
                 <GridCell span="12">

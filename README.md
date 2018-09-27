@@ -1,4 +1,4 @@
-Esse projeto implementa o MyReads como requisito para aprovação do curso Fundamentos de React da [Udacity](https://www.udacity.com/), parte integrante do [Programa Nanodegree React](https://udacity.com/course/nd019)
+Esse projeto implementa o Readable como requisito para aprovação do curso Fundamentos de React da [Udacity](https://www.udacity.com/), parte integrante do [Programa Nanodegree React](https://udacity.com/course/nd019)
 
 ### Pré-requisitos
 

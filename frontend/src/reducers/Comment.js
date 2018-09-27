@@ -15,8 +15,6 @@ export const Comment = (state = initialState, action) => {
 
     const { parentId, author, body, comments, id, comment } = action
 
-    // console.log(action)
-
     switch ( action.type ) {
 
         case ADD_COMMENT :
@@ -54,7 +52,6 @@ export const Comment = (state = initialState, action) => {
         case VOTE_COMMENT_UP_DOWN :
             return { 
                 ...state,
-                // post: post,
                 comments: state.comments.map( (item) => {
                     if(item.id !== comment.id) {
                         return item
@@ -69,7 +66,6 @@ export const Comment = (state = initialState, action) => {
         case DELETE_COMMENT_ID :
             return { 
                 ...state,
-                // post: post,
                 comments: state.comments.filter(com => com.id !== comment.id)
             }
 

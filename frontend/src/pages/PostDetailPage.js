@@ -3,37 +3,40 @@ import { connect } from 'react-redux'
 import NavBar from '../components/NavBar'
 import Post from '../components/Post'
 import FeedComment from '../components/FeedComment'
-import { editPost, getPostId } from '../actions/Post'
+import ErrorPage from '../pages/ErrorPage'
+import { editPost, getPostId, getPosts } from '../actions/Post'
 
 class PostDetailPage extends Component {
 
-    componentWillMount() {
-        this.props.getPostId(this.props.match.params.id)
+    componentDidMount() {
+        // this.props.getPostId(this.props.match.params.id)
+        this.props.getPosts()
     }
 
     render(){
         const { post } = this.props
+        console.log(this.props)
         return(
             <div>
-                <NavBar></NavBar>
-                <div>
-                    {post ?
-                        <div>
+                {post ?
+                    <div>
+                        <NavBar></NavBar>
                         <Post post={post} list={false}/>
                         <FeedComment post={post}/>
-                        </div>
-                    :null}
-                </div>
+                    </div>
+                :<ErrorPage />}
             </div>
             )
     }
 }
 
-const mapStateToProps = (state, props) => ({
-    post: state.Post.post
+const mapStateToProps = ({ Post }, props) => ({
+    posts: Post,
+    post: Post.posts.find(post => post.id === props.match.params.id)
 });
 
 const mapDispatchToProps = dispatch =>({
+    getPosts: (data) => dispatch(getPosts()),
     getPostId: (data) => dispatch(getPostId(data)),
     editPost: (data) => dispatch(editPost(data)),
 })

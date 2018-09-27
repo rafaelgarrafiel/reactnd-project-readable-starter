@@ -29,7 +29,6 @@ class PostPage extends Component {
         e.preventDefault()
         this.props.createPost(this.state)
         history.push('/');
-        // history.push("/home", { some: "state" })
     }
 
     handleChange = (val) => (evt) => { this.setState( {...this.state, [val]: evt.target.value} ) }

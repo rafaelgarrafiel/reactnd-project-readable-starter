@@ -6,6 +6,7 @@ import MainPage from '../pages/MainPage'
 import CategoryPage from '../pages/CategoryPage'
 import PostPage from '../pages/PostPage'
 import CommentPage from '../pages/CommentPage'
+import ErrorPage from '../pages/ErrorPage'
 import PostDetailPage from '../pages/PostDetailPage'
 import { history } from '../history'
 
@@ -23,6 +24,7 @@ class App extends Component {
                         <Route exact path="/add_comment" component={CommentPage}/>
                         <Route exact path="/:category" component={CategoryPage}/>
                         <Route path="/:category/:id" exact component={PostDetailPage} />
+                        <Route component={ErrorPage}/>
                     </Switch>
                 </BrowserRouter>
             </ThemeProvider>

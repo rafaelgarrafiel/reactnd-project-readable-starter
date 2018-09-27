@@ -10,8 +10,6 @@ import { TabBar, Tab } from 'rmwc/Tabs';
 
 class FilterBar extends Component {
 
-    //FIX: Trazer o state do store
-
     state = {
         checked: false
     }
@@ -23,13 +21,11 @@ class FilterBar extends Component {
     sortPosts = (evt) => {
         this.setState({checked: evt.target.checked})
         this.props.sortAllPost(evt.target.checked)
-        // console.log(this.props)
     }
 
     render(){
         const { categories } = this.props
 
-        // console.log(categories.length)
         return(
             <Grid>
                 <GridCell span="8">

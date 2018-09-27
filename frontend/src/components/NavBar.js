@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import {Toolbar, ToolbarRow, ToolbarSection, ToolbarTitle, ToolbarIcon} from 'rmwc';
-// import { addCategory } from '../actions/Category'
 import { connect } from 'react-redux'
 import FilterBar from './FilterBar'
 
@@ -57,6 +56,5 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = dispatch =>({
-    // addCategories: (data) => dispatch(addCategory(data)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

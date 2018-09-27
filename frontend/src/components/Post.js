@@ -132,7 +132,6 @@ class Post extends Component {
 
 const mapStateToProps = (state, props) => ({
     status: state.Post.status,
-    // post: state.Post.post
 })
 
 const mapDispatchToProps = dispatch =>({

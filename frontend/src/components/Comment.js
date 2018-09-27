@@ -27,14 +27,10 @@ class Comment extends Component {
     }
 
     vote(comment, vote) {
-        // console.log(comment)
-        // console.log(vote)
         this.props.voteComment({id: comment.id, option: vote})
     }
 
     edit(comment) {
-        // console.log(comment)
-        // console.log(this.state)
         this.setState({
             status:'edit',
             body: comment.body
@@ -43,8 +39,6 @@ class Comment extends Component {
 
     delete(comment) {
         this.props.deleteComment(comment.id)
-        // console.log(post)
-        // history.push('/');
     }
 
     handleChange = (val) => (evt) => { this.setState( {...this.state, [val]: evt.target.value} ) }
@@ -115,7 +109,6 @@ class Comment extends Component {
 
 const mapStateToProps = (state, props) => ({
     status: state.Comment.status,
-    // state: state
 })
 
 const mapDispatchToProps = dispatch =>({
